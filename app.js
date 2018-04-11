@@ -226,6 +226,9 @@ const App = (function(ItemCtrl, UICtrl) {
     // Update item event
     document.querySelector(UISelectors.updateBtn).addEventListener('click', itemUpdateSubmit);
 
+    // Delete item event
+    document.querySelector(UISelectors.deleteBtn).addEventListener('click', itemDeleteSubmit);
+
     // Back button event
     document.querySelector(UISelectors.backBtn).addEventListener('click', UICtrl.clearEditState);
 
@@ -298,6 +301,13 @@ const App = (function(ItemCtrl, UICtrl) {
 
     e.preventDefault();
   }
+
+  const itemDeleteSubmit = function (e) {
+    console.log('Delete');
+
+    e.preventDefault();
+  }
+
 
 
   // Public methods
