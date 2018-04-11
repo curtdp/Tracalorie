@@ -11,6 +11,6 @@ const UICtrl = (function() {
 })();
 
 // App Controller
-const App = (function() {
+const App = (function(ItemCtrl, UICtrl) {
 
-})();
+})(ItemCtrl, UICtrl);
