@@ -35,5 +35,5 @@ const UICtrl = (function() {
 
 // App Controller
 const App = (function(ItemCtrl, UICtrl) {
-
+  console.log(ItemCtrl.logData());
 })(ItemCtrl, UICtrl);
