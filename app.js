@@ -25,6 +25,9 @@ const ItemCtrl = (function() {
     getItems: function() {
       return data.items;
     },
+    addItem: function (name, calories) {
+      console.log(name, calories);
+    },
     logData: function() {
       return data;
     }
@@ -85,7 +88,11 @@ const App = (function(ItemCtrl, UICtrl) {
     // Get form input from UI Controller
     const input = UICtrl.getItemInput();
 
-    console.log(input);
+    // Check for name and calorie input
+    if (input.name !== '' && input.calories !== '') {
+      // Add item
+      const newItem = ItemCtrl.addItem(input.name, input.calories);
+    }
 
     e.preventDefault();
   }
