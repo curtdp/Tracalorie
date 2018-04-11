@@ -55,6 +55,9 @@ const ItemCtrl = (function() {
       });
       return found;
     },
+    setCurrentItem: function (item) {
+      data.currentItem = item;
+    },
     getTotalCalories: function () {
       let total = 0;
 
@@ -197,14 +200,16 @@ const App = (function(ItemCtrl, UICtrl) {
       // Get list item id (item-0, item-1)
       const listId = e.target.parentNode.parentNode.id;
 
-       // Break into an array
-       const listIdArr = listId.split('-');
-       // Get the actual id
-       const id = parseInt(listIdArr[1]);
+      // Break into an array
+      const listIdArr = listId.split('-');
+      // Get the actual id
+      const id = parseInt(listIdArr[1]);
 
-       // Get item
-       const itemToEdit = ItemCtrl.getItemById(id);
-       console.log(itemToEdit);
+      // Get item
+      const itemToEdit = ItemCtrl.getItemById(id);
+
+      // Set current item
+      ItemCtrl.setCurrentItem(itemToEdit);
     }
 
     e.preventDefault();
