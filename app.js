@@ -187,7 +187,10 @@ const App = (function(ItemCtrl, UICtrl) {
       // Get list item id (item-0, item-1)
       const listId = e.target.parentNode.parentNode.id;
 
-      console.log(listId);
+       // Break into an array
+       const listIdArr = listId.split('-');
+
+       console.log(listIdArr);
     }
 
     e.preventDefault();
