@@ -20,6 +20,12 @@ const ItemCtrl = (function() {
     totalCalories: 0
   }
 
+  return {
+    logData: function() {
+      return data;
+    }
+  }
+
 })();
 
 // UI Controller
