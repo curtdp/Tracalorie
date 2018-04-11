@@ -184,8 +184,12 @@ const App = (function(ItemCtrl, UICtrl) {
   // Update item edit click
   const itemEditClick = function (e) {
     if (e.target.classList.contains('edit-item')) {
-      console.log('edit item');
+      // Get list item id (item-0, item-1)
+      const listId = e.target.parentNode.parentNode.id;
+
+      console.log(listId);
     }
+
     e.preventDefault();
   }
 
