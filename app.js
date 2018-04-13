@@ -2,7 +2,26 @@
 const StorageCtrl = (function() {
   // Public methods
   return {
+    storeItem: function (item) {
+      let items;
+      // Check if any items in LS
+      if (localStorage.getItem('items') === null) {
+        items = [];
+        // Push new item
+        items.push(item);
+        // Set LS
+        localStorage.setItem('items', JSON.stringify(items));
+      } else {
+        // Get what is already in LS
+        items = JSON.parse(localStorage.getItem('items'));
 
+        // Push new item
+        items.push(item);
+
+        // Re set LS
+        localStorage.setItem('items', JSON.stringify(items));
+      }
+    },
   }
 })();
 
@@ -291,6 +310,9 @@ const App = (function(ItemCtrl, StorageCtrl, UICtrl) {
       const totalCalories = ItemCtrl.getTotalCalories();
       // Add total calories to UI
       UICtrl.showTotalCalories(totalCalories);
+
+      // Store in localStorage
+      StorageCtrl.storeItem(newItem);
 
       // Clear fields
       UICtrl.clearInput();
