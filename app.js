@@ -100,6 +100,9 @@ const ItemCtrl = (function() {
       // Return total
       return data.totalCalories;
     },
+    clearAllItems: function() {
+      data.items = [];
+    },
     logData: function() {
       return data;
     }
